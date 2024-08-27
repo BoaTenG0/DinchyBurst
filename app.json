@@ -4,24 +4,29 @@
     "slug": "BurstBrain",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/svgg.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#090A2A"
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/svgg.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.kobby223.BurstBrain"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/svgg.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "303d4012-cd23-40dd-b839-b616597ccd70"
+      }
     }
   }
 }
