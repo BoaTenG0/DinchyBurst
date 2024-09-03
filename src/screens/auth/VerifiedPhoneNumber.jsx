@@ -4,6 +4,7 @@ import {
   StyleSheet,
   ImageBackground,
   SafeAreaView,
+  Platform,
 } from "react-native";
 import { RadialGradient } from "react-native-gradients";
 import * as Animatable from "react-native-animatable";
@@ -23,7 +24,9 @@ const VerifiedPhoneNumber = () => {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.stretchedRadialContainer}>
-          <RadialGradient x='50%' y='50%' colorList={colorList} />
+          {Platform.OS === "ios" && (
+            <RadialGradient x="50%" y="50%" colorList={colorList} />
+          )}
           <View
             style={{
               position: "absolute",
@@ -56,7 +59,7 @@ const VerifiedPhoneNumber = () => {
             >
               <Button
                 style={styles.button}
-                mode='contained'
+                mode="contained"
                 onPress={() => navigate("Login")}
               >
                 <Text style={styles.buttonText}>Finish</Text>
@@ -110,7 +113,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "60%",
-    gap: "10%",
+    gap: 10,
   },
   title: {
     fontSize: 20,

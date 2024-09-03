@@ -98,11 +98,11 @@ const styles = StyleSheet.create({
   },
   scrollContent: {
     // flex: 1,
-    gap: "20%",
+    gap: 20,
     paddingBottom: 70,
   },
   quizTitleContainer: {
-    gap: "10%",
+    gap: 10,
   },
   sportText: {
     fontSize: 14,
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#aaa",
   },
   descContainer: {
-    gap: "10%",
+    gap: 10,
   },
   descTitle: {
     fontSize: 14,

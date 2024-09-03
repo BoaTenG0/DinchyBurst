@@ -1,11 +1,11 @@
-import { View, Text, SafeAreaView, StyleSheet, StatusBar } from "react-native";
+import { View, Text, SafeAreaView, StyleSheet, StatusBar, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "react-native-paper";
-import { ArrowLeft2, CloseCircle } from "iconsax-react-native";
 import * as Animatable from "react-native-animatable";
 import { useDispatch, useSelector } from "react-redux";
 import Toast from "../../components/Toast";
+import { AntDesign } from "@expo/vector-icons";
 
 const VerifyEmail = () => {
   const { navigate } = useNavigation();
@@ -22,11 +22,13 @@ const VerifyEmail = () => {
     console.log("toast is hidden");
   }
   const handleLaterPress = () => {
-    showInfo("You can verify your email later.");
+    showInfo("Please Verify your email later.");
     setTimeout(() => {
       navigate("EmailVerified");
     }, 2000);
   };
+
+  
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle={"light-content"} />
@@ -46,16 +48,16 @@ const VerifyEmail = () => {
               }}
             >
               <Button onPress={() => navigate("Register")}>
-                <ArrowLeft2 color='#000' />
+              <AntDesign name="arrowleft" size={20} color="black" />
               </Button>
             </View>
           </View>
 
-          <View style={{ padding: 20, gap: "10%" }}>
+          <View style={{ padding: 20, gap: 10 }}>
             <Text style={styles.ImageText}>Verify your Email</Text>
             <Text style={styles.ImageSubText}>
               Please check our inbox and tap the link in the email we’ve just
-              sent to:{" "}
+              sent to:
             </Text>
           </View>
 
@@ -63,7 +65,7 @@ const VerifyEmail = () => {
             <Text style={styles.email}>{email}</Text>
             <Button
               mode='text'
-              onPress={() => showInfo("Verification email resent.")}
+              onPress={() => showInfo("Verification email sent")}
             >
               <Text style={styles.email}>Resend</Text>
             </Button>
@@ -88,6 +90,7 @@ const VerifyEmail = () => {
 export default VerifyEmail;
 const styles = StyleSheet.create({
   safeArea: {
+    paddingTop: Platform.OS == "ios" ? 10 : 30,
     flex: 1,
     backgroundColor: "#FFF",
   },

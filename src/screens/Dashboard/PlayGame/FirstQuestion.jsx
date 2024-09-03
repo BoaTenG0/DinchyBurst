@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     width: "100%",
-    gap: "40%",
+    gap: 40,
   },
   quizDetailsContainer: {
     position: "relative",
@@ -179,7 +179,7 @@ const styles = StyleSheet.create({
   },
   quizTitleContainer: {
     width: "100%",
-    gap: "20%",
+    gap: 20,
   },
   sportText: {
     fontSize: 14,

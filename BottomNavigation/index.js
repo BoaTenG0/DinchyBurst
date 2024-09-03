@@ -13,13 +13,17 @@ import {
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { FontAwesome5, Ionicons } from "@expo/vector-icons";
+import {
+  AntDesign,
+  FontAwesome5,
+  Foundation,
+  Ionicons,
+} from "@expo/vector-icons";
 
 import plus from "../assets/plus.png";
 import HomeScreen from "../src/screens/Dashboard/HomeScreen";
 import BottomSheet from "../src/components/BottomSheet";
 import SearchScreen from "../src/screens/Dashboard/SearchScreen";
-import { Clock, Setting2 } from "iconsax-react-native";
 import HistoryScreen from "../src/screens/Dashboard/HistoryScreen";
 import ProfileScreen from "../src/screens/Dashboard/ProfileScreen";
 import UpdateProfile from "../src/screens/auth/UpdateProfile";
@@ -62,21 +66,21 @@ export default function BottomNavigation() {
   const ProfileStack = () => {
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name='Profile' component={ProfileScreen} />
-        <Stack.Screen name='UpdateProfile' component={UpdateProfile} />
-        <Stack.Screen name='UpdateEmail' component={UpdateEmail} />
-        <Stack.Screen name='UpdatePassword' component={UpdatePassword} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="UpdateProfile" component={UpdateProfile} />
+        <Stack.Screen name="UpdateEmail" component={UpdateEmail} />
+        <Stack.Screen name="UpdatePassword" component={UpdatePassword} />
       </Stack.Navigator>
     );
   };
   const HomeStack = () => {
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name='HomeProfile' component={HomeScreen} />
-        <Stack.Screen name='WinnersScreen' component={WinnersScreen} />
-        <Stack.Screen name='BasicTriviaQuiz' component={BasicTriviaQuiz} />
-        <Stack.Screen name='FirstQuestion' component={FirstQuestion} />
-        <Stack.Screen name='Finish' component={Finish} />
+        <Stack.Screen name="HomeProfile" component={HomeScreen} />
+        <Stack.Screen name="WinnersScreen" component={WinnersScreen} />
+        <Stack.Screen name="BasicTriviaQuiz" component={BasicTriviaQuiz} />
+        <Stack.Screen name="FirstQuestion" component={FirstQuestion} />
+        <Stack.Screen name="Finish" component={Finish} />
       </Stack.Navigator>
     );
   };
@@ -97,8 +101,8 @@ export default function BottomNavigation() {
               title: "HomeProfile",
               tabBarIcon: ({ focused }) => (
                 <View style={styles.iconContainer}>
-                  <FontAwesome5
-                    name='home'
+                  <Foundation
+                    name="home"
                     size={20}
                     color={focused ? "red" : "gray"}
                   />
@@ -123,7 +127,7 @@ export default function BottomNavigation() {
               tabBarIcon: ({ focused }) => (
                 <View style={styles.iconContainer}>
                   <FontAwesome5
-                    name='search'
+                    name="search"
                     size={20}
                     color={focused ? "red" : "gray"}
                   />
@@ -149,7 +153,7 @@ export default function BottomNavigation() {
                 <TouchableOpacity onPress={toggleBottomSheet}>
                   <View style={styles.actionButton}>
                     {isBottomSheetVisible ? (
-                      <Ionicons name='close' size={24} color='white' />
+                      <Ionicons name="close" size={24} color="white" />
                     ) : (
                       <Image source={plus} style={styles.plusIcon} />
                     )}
@@ -166,7 +170,11 @@ export default function BottomNavigation() {
             options={{
               tabBarIcon: ({ focused }) => (
                 <View style={styles.iconContainer}>
-                  <Clock size={20} color={focused ? "red" : "gray"} />
+                  <AntDesign
+                    name="clockcircleo"
+                    size={20}
+                    color={focused ? "red" : "gray"}
+                  />
                 </View>
               ),
               headerShown: false,
@@ -188,7 +196,11 @@ export default function BottomNavigation() {
               title: "Profile",
               tabBarIcon: ({ focused }) => (
                 <View style={styles.iconContainer}>
-                  <Setting2 size={20} color={focused ? "red" : "gray"} />
+                  <AntDesign
+                    name="setting"
+                    size={20}
+                    color={focused ? "red" : "gray"}
+                  />
                 </View>
               ),
               headerShown: false,

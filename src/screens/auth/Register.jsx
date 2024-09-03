@@ -16,11 +16,11 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "react-native-paper";
-import { CloseCircle } from "iconsax-react-native";
 import * as Animatable from "react-native-animatable";
 import Toast from "../../components/Toast";
 import { useDispatch } from "react-redux";
 import { setEmail } from "../../reducers/phoneNumberSlice";
+import { AntDesign } from "@expo/vector-icons";
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -77,7 +77,7 @@ const Register = () => {
                 }}
               >
                 <Button onPress={() => navigate("Feature2")}>
-                  <CloseCircle color='#000' />
+                <AntDesign name="close" size={20} color="black" />
                 </Button>
               </View>
             </View>
@@ -163,6 +163,7 @@ const Register = () => {
 export default Register;
 const styles = StyleSheet.create({
   safeArea: {
+    paddingTop: Platform.OS == "ios" ? 10 : 30,
     flex: 1,
     backgroundColor: "#FFF",
   },

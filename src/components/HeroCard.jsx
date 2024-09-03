@@ -1,5 +1,5 @@
 import { useNavigation } from "@react-navigation/native";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, Platform } from "react-native";
 import SvgComponent from "./Svg";
 import {
   FontAwesome5,
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 20,
-    gap: "10%",
+    gap: 10,
   },
   tag: {
     flexDirection: "row",
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   },
   playButtonContainer: {
     position: "absolute",
-    top: "25%",
+    top: Platform.OS == "ios" ? "25%" : "20%",
     right: 10,
     transform: [{ translateY: -25 }],
     justifyContent: "center",

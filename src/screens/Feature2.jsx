@@ -4,6 +4,7 @@ import {
   StyleSheet,
   ImageBackground,
   SafeAreaView,
+  Platform,
 } from "react-native";
 import { RadialGradient } from "react-native-gradients";
 import * as Animatable from "react-native-animatable";
@@ -37,7 +38,9 @@ const Feature2 = () => {
       </View>
       <View style={styles.container}>
         <View style={styles.stretchedRadialContainer}>
-          <RadialGradient x='50%' y='50%' colorList={colorList} />
+          {Platform.OS === "ios" && (
+            <RadialGradient x="50%" y="50%" colorList={colorList} />
+          )}
           <View
             style={{
               position: "absolute",
@@ -66,19 +69,19 @@ const Feature2 = () => {
                 width: "100%",
                 marginHorizontal: 70,
                 marginTop: 50,
-                gap: "50%",
+                gap: 50,
               }}
             >
               <Button
                 style={styles.button1}
-                mode='contained'
+                mode="contained"
                 onPress={() => navigate("Register")}
               >
                 <Text style={styles.buttonText}>Register</Text>
               </Button>
               <Button
                 style={styles.button}
-                mode='contained'
+                mode="contained"
                 onPress={() => navigate("Login")}
               >
                 <Text style={{ color: "#fff" }}>Sign In</Text>
@@ -132,7 +135,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    gap: "10%",
+    gap: 10,
     paddingHorizontal: "20%",
   },
   title: {
@@ -160,6 +163,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#031EAA",
+    fontWeight: "bold",
   },
 });
 

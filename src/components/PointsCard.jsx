@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginBottom: 30,
     alignItems: "center",
-    gap: "15%",
+    gap: 15,
   },
   rankBadgeContainer: {
     width: 30,

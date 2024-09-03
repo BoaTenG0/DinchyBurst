@@ -22,9 +22,8 @@ import React, {
   useState,
 } from "react";
 import { Button } from "react-native-paper";
-import { ArrowLeft2, ArrowRight2 } from "iconsax-react-native";
 import * as Animatable from "react-native-animatable";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import Toast from "../../components/Toast";
 import PhoneInput from "react-native-international-phone-number";
 
@@ -76,7 +75,7 @@ const UpdateEmail = () => {
                 }}
               >
                 <Button onPress={() => navigate("Profile")}>
-                  <ArrowLeft2 color='#000' />
+                <AntDesign name="arrowleft" size={20} color="black" />
                 </Button>
               </View>
             </View>
@@ -125,6 +124,7 @@ const UpdateEmail = () => {
 export default UpdateEmail;
 const styles = StyleSheet.create({
   safeArea: {
+    paddingTop: Platform.OS == "ios" ? 10 : 30,
     flex: 1,
     backgroundColor: "#FFF",
   },

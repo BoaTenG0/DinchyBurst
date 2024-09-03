@@ -4,6 +4,7 @@ import {
   StyleSheet,
   ImageBackground,
   SafeAreaView,
+  Platform,
 } from "react-native";
 import { RadialGradient } from "react-native-gradients";
 import * as Animatable from "react-native-animatable";
@@ -23,7 +24,9 @@ const EmailVerified = () => {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.stretchedRadialContainer}>
-          <RadialGradient x='50%' y='50%' colorList={colorList} />
+          {Platform.OS === "ios" && (
+            <RadialGradient x="50%" y="50%" colorList={colorList} />
+          )}
           <View
             style={{
               position: "absolute",
@@ -55,7 +58,7 @@ const EmailVerified = () => {
             >
               <Button
                 style={styles.button}
-                mode='contained'
+                mode="contained"
                 onPress={() => navigate("PhoneNumber")}
               >
                 <Text style={styles.buttonText}>Continue</Text>
@@ -109,7 +112,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "50%",
-    gap: "10%",
+    gap: 10,
   },
   title: {
     fontSize: 20,

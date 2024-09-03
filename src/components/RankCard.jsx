@@ -9,7 +9,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { Button } from "react-native-paper";
 
@@ -52,7 +52,7 @@ const Rank = () => {
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
-      style={{ marginBottom: 390 }}
+      style={{ marginBottom: 500 }}
       contentContainerStyle={styles.container}
     >
       {/* <> */}
@@ -70,17 +70,21 @@ const Rank = () => {
         </View>
         <View style={styles.viewAllContainer}>
           <View style={styles.viewAllButton}>
-            <Button mode='text' onPress={() => navigate("WinnersScreen")}>
+            <Button mode="text" onPress={() => navigate("WinnersScreen")}>
               <Text style={styles.viewAllText}>View All Winners</Text>
             </Button>
-            <AntDesign name='arrowright' size={12} color='#0c092a' />
+            <MaterialCommunityIcons
+              name="arrow-top-right"
+              size={16}
+              color="black"
+            />
           </View>
         </View>
       </View>
       <RankCard
-        rank='1'
-        plays='3 Plays'
-        name='Kanaan Stark'
+        rank="1"
+        plays="3 Plays"
+        name="Kanaan Stark"
         // flag={require("../../assets/cz-czech-republic.svg")}
         avatar={require("../../assets/Mask.png")}
         // medalIcon={require("../../assets/icon.svg")}
@@ -89,9 +93,9 @@ const Rank = () => {
         backgroundImage={require("../../assets/Base.png")}
       />
       <RankCard
-        rank='2'
-        plays='2 Plays'
-        name='Ian Tubers'
+        rank="2"
+        plays="2 Plays"
+        name="Ian Tubers"
         // flag={require("../../assets/cz-czech-republic.svg")}
         avatar={require("../../assets/Mask.png")}
         medalStar={require("../../assets/Medal1.png")}
@@ -99,9 +103,9 @@ const Rank = () => {
         backgroundImage={require("../../assets/Base1.png")}
       />
       <RankCard
-        rank='3'
-        plays='1 Plays'
-        name='Craig Tayor'
+        rank="3"
+        plays="1 Plays"
+        name="Craig Tayor"
         // flag={require("../../assets/cz-czech-republic.svg")}
         avatar={require("../../assets/Mask.png")}
         medalStar={require("../../assets/Medal2.png")}
@@ -150,7 +154,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     marginBottom: 30,
     alignItems: "center",
-    gap: "15%",
+    gap: 15,
   },
   rankBadgeContainer: {
     width: 30,

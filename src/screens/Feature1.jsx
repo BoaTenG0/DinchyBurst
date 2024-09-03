@@ -4,6 +4,7 @@ import {
   StyleSheet,
   ImageBackground,
   SafeAreaView,
+  Platform,
 } from "react-native";
 import { RadialGradient } from "react-native-gradients";
 import { Button } from "react-native-paper";
@@ -45,22 +46,24 @@ const Feature1 = () => {
             alignItems: "center",
           }}
         >
-          <Button onPress={() => navigate("Feature2")}>
-            <View
-              style={{
-                alignItems: "center",
-                justifyContent: "center",
-                height: 20,
-              }}
-            >
-              <Text style={{ color: "#000", fontWeight: "bold" }}>Skip</Text>
-            </View>
+         <Button
+            onPress={() => navigate("Feature2")}
+            style={{
+              width: "100%",
+              height: 50,
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Text style={{ color: "#000", fontWeight: "bold" }}>Skip</Text>
           </Button>
         </View>
       </View>
       <View style={styles.container}>
         <View style={styles.stretchedRadialContainer}>
-          <RadialGradient x='50%' y='50%' colorList={colorList} />
+          {Platform.OS === "ios" && (
+            <RadialGradient x="50%" y="50%" colorList={colorList} />
+          )}
           <View
             style={{
               position: "absolute",
@@ -92,7 +95,7 @@ const Feature1 = () => {
             >
               <Button
                 style={styles.button}
-                mode='contained'
+                mode="contained"
                 onPress={() => navigate("Feature2")}
               >
                 <Text style={styles.buttonText}>Next</Text>
@@ -108,6 +111,7 @@ const Feature1 = () => {
 
 const styles = StyleSheet.create({
   safeArea: {
+    paddingTop: Platform.OS == "ios" ? 10 : 30,
     flex: 1,
     backgroundColor: "#090A2A",
   },
@@ -146,7 +150,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    gap: "10%",
+    gap: 10,
     paddingHorizontal: "20%",
   },
   title: {
@@ -169,6 +173,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: "#031EAA",
+    fontWeight: "bold"
   },
 });
 

@@ -22,9 +22,8 @@ import React, {
   useState,
 } from "react";
 import { Button } from "react-native-paper";
-import { ArrowLeft2, ArrowRight2 } from "iconsax-react-native";
 import * as Animatable from "react-native-animatable";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import Toast from "../../components/Toast";
 
 const NewPassword = () => {
@@ -79,7 +78,7 @@ const NewPassword = () => {
                 }}
               >
                 <Button onPress={() => navigate("Login")}>
-                  <ArrowLeft2 color='#000' />
+                <AntDesign name="arrowleft" size={20} color="black" />
                 </Button>
               </View>
             </View>
@@ -138,6 +137,8 @@ const NewPassword = () => {
 export default NewPassword;
 const styles = StyleSheet.create({
   safeArea: {
+    paddingTop: Platform.OS == "ios" ? 10 : 30,
+
     flex: 1,
     backgroundColor: "#FFF",
   },

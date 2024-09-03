@@ -22,9 +22,8 @@ import React, {
   useState,
 } from "react";
 import { Button } from "react-native-paper";
-import { ArrowLeft2, ArrowRight2 } from "iconsax-react-native";
 import * as Animatable from "react-native-animatable";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { AntDesign, MaterialCommunityIcons } from "@expo/vector-icons";
 import Toast from "../../components/Toast";
 
 import {
@@ -93,7 +92,7 @@ const Login = () => {
         <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
           <BottomSheetModalProvider>
             <View style={styles.container}>
-              <Animatable.View animation='fadeInUp' duration={1000}>
+              <Animatable.View animation="fadeInUp" duration={1000}>
                 <View style={styles.header}>
                   <View
                     style={{
@@ -106,7 +105,7 @@ const Login = () => {
                     }}
                   >
                     <Button onPress={() => navigate("Feature2")}>
-                      <ArrowLeft2 color='#000' />
+                      <AntDesign name="arrowleft" size={20} color="black" />
                     </Button>
                   </View>
                 </View>
@@ -126,12 +125,12 @@ const Login = () => {
                     </Text>
                     <TextInput
                       value={user.email}
-                      placeholder='Please type your email here...'
+                      placeholder="Please type your email here..."
                       onChangeText={(text) => handleChange("email", text)}
                       style={styles.input}
-                      placeholderTextColor='grey'
-                      autoCapitalize='none'
-                      keyboardType='email-address'
+                      placeholderTextColor="grey"
+                      autoCapitalize="none"
+                      keyboardType="email-address"
                     />
                   </View>
                   <Text
@@ -145,16 +144,16 @@ const Login = () => {
                   <View style={styles.passwordContainer}>
                     <TextInput
                       value={user.password}
-                      placeholder='Please type your password here...'
+                      placeholder="Please type your password here..."
                       onChangeText={(text) => handleChange("password", text)}
                       style={styles.passwordInput}
-                      placeholderTextColor='grey'
+                      placeholderTextColor="grey"
                       secureTextEntry={!showPassword}
                     />
                     <MaterialCommunityIcons
                       name={showPassword ? "eye-off" : "eye"}
                       size={24}
-                      color='#aaa'
+                      color="#aaa"
                       style={styles.icon}
                       onPress={toggleShowPassword}
                     />
@@ -163,7 +162,7 @@ const Login = () => {
                 <View style={styles.imageContainer}>
                   <Button
                     style={styles.button}
-                    mode='contained'
+                    mode="contained"
                     onPress={handleNextPress}
                   >
                     <Text style={styles.buttonText}>Sign In</Text>
@@ -179,10 +178,10 @@ const Login = () => {
                     },
                   ]}
                 >
-                  <Button mode='text' onPress={() => navigate("Register")}>
+                  <Button mode="text" onPress={() => navigate("Register")}>
                     <Text style={{ color: "#090A2A" }}>Register</Text>
                   </Button>
-                  <Button mode='text' onPress={handlePresentModalPress}>
+                  <Button mode="text" onPress={handlePresentModalPress}>
                     <Text style={{ color: "#090A2A" }}>Forgot Password?</Text>
                   </Button>
                 </View>
@@ -195,9 +194,9 @@ const Login = () => {
                   <BottomSheetView style={styles.contentContainer}>
                     <View style={styles.row}>
                       <MaterialCommunityIcons
-                        name='email'
+                        name="email"
                         size={24}
-                        color='#aaa'
+                        color="#aaa"
                         style={styles.icon}
                       />
                       <Text style={{ fontSize: 17 }}>
@@ -213,9 +212,14 @@ const Login = () => {
                           alignItems: "center",
                         }}
                       >
-                        <Button onPress={() => navigate("NewPassword")}>
-                          <ArrowRight2 size={19} color='#000' />
-                        </Button>
+                        {/* <Button onPress={() => navigate("NewPassword")}> */}
+                          <AntDesign
+                            name="arrowright"
+                            size={15}
+                            color="black"
+                            onPress={() => navigate("NewPassword")}
+                          />
+                        {/* </Button> */}
                       </View>
                     </View>
                   </BottomSheetView>
@@ -232,6 +236,7 @@ const Login = () => {
 export default Login;
 const styles = StyleSheet.create({
   safeArea: {
+    paddingTop: Platform.OS == "ios" ? 10 : 30,
     flex: 1,
     backgroundColor: "#FFF",
   },
@@ -335,6 +340,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    gap: "20%",
+    gap: 20,
   },
 });

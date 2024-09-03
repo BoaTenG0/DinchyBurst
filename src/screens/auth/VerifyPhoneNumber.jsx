@@ -16,7 +16,7 @@ import Toast from "../../components/Toast";
 import { useNavigation } from "@react-navigation/native";
 import { Button } from "react-native-paper";
 import VerifyCode from "../../components/VerifyCode";
-import { Clock } from "iconsax-react-native";
+import { AntDesign } from "@expo/vector-icons";
 
 const VerifyPhoneNumber = () => {
   const { navigate } = useNavigation();
@@ -78,7 +78,7 @@ const VerifyPhoneNumber = () => {
 
   const handleNextPress = () => {
     if (!verificationCode) {
-      showError("Please fill the field.");
+      showError("Please enter the code.");
       return;
     }
     navigate("VerifiedPhoneNumber");
@@ -88,14 +88,14 @@ const VerifyPhoneNumber = () => {
     console.log("toast is hidden");
   }
   return (
-    <SafeAreaView>
+    <SafeAreaView >
       <StatusBar barStyle={"light-content"} />
       <Toast ref={toastRef} onHide={handleHide} left={50} />
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <View style={styles.container}>
           <VerifyCompo
-            header='We just sent an SMS'
-            content='Enter the security code we sent to '
+            header="We just sent an SMS"
+            content="Enter the security code we sent to +233 "
             phone
             wrong
           />
@@ -156,7 +156,11 @@ const VerifyPhoneNumber = () => {
                       }}
                     >
                       <View style={{ marginTop: -15 }}>
-                        <Clock color='#E7EAEB' />
+                        <AntDesign
+                          name="clockcircleo"
+                          size={20}
+                          color="black"
+                        />
                       </View>
                       <View>
                         {timerSeconds > 0 && (
@@ -182,7 +186,7 @@ const VerifyPhoneNumber = () => {
           <View style={styles.buttonContainer}>
             <Button
               style={styles.button}
-              mode='contained'
+              mode="contained"
               onPress={handleNextPress}
             >
               <Text style={styles.buttonText}>Done</Text>
@@ -200,15 +204,15 @@ const styles = StyleSheet.create({
     height: "100%",
     display: "flex",
     alignItems: "center",
-    gap: "20%",
+    gap: 20,
     // justifyContent: "center",
-    paddingHorizontal: "5%",
+    paddingHorizontal: "5%", 
     paddingVertical: "20%",
     // marginVertical: "10%"
     position: "relative",
   },
   InputTitle: {
-    fontSize: "15%",
+    fontSize: 15,
     color: "#000",
     fontWeight: "bold",
     textAlign: "center",
@@ -218,7 +222,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 45,
     borderWidth: 1,
-    borderRadius: "25%",
+    borderRadius: 25,
     borderColor: "#000",
     paddingHorizontal: "7%",
     textTransform: "uppercase",

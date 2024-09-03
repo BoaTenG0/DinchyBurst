@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-end",
     alignItems: "center",
-    gap: "50%",
+    gap: 50,
     // paddingHorizontal: 20,
   },
   text: {
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 10,
     padding: 20,
-    gap: "20%",
+    gap: 20,
     marginVertical: 20,
   },
   image: {
@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   item: {
-    gap: "10%",
+    gap: 10,
   },
   title: {
     color: "#858494",

@@ -16,7 +16,6 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useRef, useState } from "react";
 import { Button } from "react-native-paper";
-import { CloseCircle } from "iconsax-react-native";
 import * as Animatable from "react-native-animatable";
 import Toast from "../../components/Toast";
 import { useDispatch } from "react-redux";

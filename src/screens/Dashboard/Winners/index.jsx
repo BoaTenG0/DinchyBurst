@@ -7,7 +7,6 @@ import React, {
 } from "react";
 
 import { useNavigation } from "@react-navigation/native";
-import { ArrowLeft2 } from "iconsax-react-native";
 import {
   SafeAreaView,
   StyleSheet,
@@ -36,6 +35,7 @@ import Animated, {
 } from "react-native-reanimated";
 import { TabViewLazyLoadingShowcase } from "../../../components/Tabs";
 import { PointCard } from "../../../components/PointsCard";
+import { AntDesign } from "@expo/vector-icons";
 
 const { height: screenHeight } = Dimensions.get("window");
 
@@ -114,7 +114,7 @@ const WinnersScreen = () => {
                 }}
               >
                 <Button onPress={() => navigate("HomeProfile")}>
-                  <ArrowLeft2 color='#000' />
+                <AntDesign name="arrowleft" size={20} color="black" />
                 </Button>
               </View>
               <Text style={styles.text}>Leader board</Text>
@@ -209,7 +209,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
     padding: 16,
-    gap: "100%",
+    gap: 100,
   },
   text: {
     fontWeight: "bold",

@@ -1,6 +1,5 @@
 import { AntDesign, FontAwesome6, MaterialIcons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { User } from "iconsax-react-native";
 import { useState } from "react";
 import {
   StyleSheet,
@@ -9,6 +8,7 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  Platform,
 } from "react-native";
 import { Drawer, IconButton } from "react-native-paper";
 import * as Animatable from "react-native-animatable";
@@ -16,7 +16,7 @@ import * as Animatable from "react-native-animatable";
 const ProfileScreen = () => {
   const { navigate } = useNavigation();
   return (
-    <Animatable.View animation='fadeInUp' duration={1000} style={{ flex: 1 }}>
+    <Animatable.View animation="fadeInUp" duration={1000} style={{ flex: 1 }}>
       <View style={styles.container}>
         <View style={styles.row}>
           <Text style={styles.text}>Profile Settings</Text>
@@ -25,7 +25,7 @@ const ProfileScreen = () => {
           </View>
         </View>
         <View style={styles.bottomContainer}>
-          <View style={{ position: "relative", alignItems: "center" }}>
+          <View style={{ position: "relative", justifyContent: "center", alignItems: "center" }}>
             <View style={styles.imageContainer}>
               <Image
                 source={require("../../../../assets/Mask.png")}
@@ -36,17 +36,17 @@ const ProfileScreen = () => {
               <Text style={styles.profileText}>Ohene Gyan</Text>
               <View style={styles.menu}>
                 <View style={styles.menuItem}>
-                  <AntDesign name='star' size={20} color='#fff' />
+                  <AntDesign name="star" size={20} color="#fff" />
                   <Text style={styles.menuItemText}>Score</Text>
                   <Text style={styles.menuItemValue}>590</Text>
                 </View>
                 <View style={styles.menuItem}>
-                  <FontAwesome6 name='crown' size={20} color='#fff' />
+                  <FontAwesome6 name="crown" size={20} color="#fff" />
                   <Text style={styles.menuItemText}>Total quizzes</Text>
                   <Text style={styles.menuItemValue}>590</Text>
                 </View>
                 <View style={styles.menuItem}>
-                  <FontAwesome6 name='sack-dollar' size={20} color='#fff' />
+                  <FontAwesome6 name="sack-dollar" size={20} color="#fff" />
                   <Text style={styles.menuItemText}>total earnings</Text>
                   <Text style={styles.menuItemValue}>GHS 590</Text>
                 </View>
@@ -70,7 +70,7 @@ const ProfileScreen = () => {
               showsVerticalScrollIndicator={false}
               style={{ marginBottom: 290 }}
             >
-              <View style={{ paddingHorizontal: 20, gap: "10%" }}>
+              <View style={{ paddingHorizontal: 20, gap: 10 }}>
                 <TouchableOpacity
                   style={[
                     styles.row,
@@ -80,7 +80,7 @@ const ProfileScreen = () => {
                 >
                   <View style={styles.rowSub}>
                     <View style={styles.circle}>
-                      <User size={20} color='#000' />
+                      <AntDesign name="user" size={20} color="black" />
                     </View>
                     <View style={{ gap: 5 }}>
                       <Text style={styles.title}>Update Profile</Text>
@@ -89,7 +89,7 @@ const ProfileScreen = () => {
                       </Text>
                     </View>
                   </View>
-                  <IconButton icon='chevron-right' />
+                  <IconButton icon="chevron-right" />
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={[
@@ -100,16 +100,16 @@ const ProfileScreen = () => {
                 >
                   <View style={styles.rowSub}>
                     <View style={styles.circle}>
-                      <MaterialIcons name='email' size={20} color='#000' />
+                      <MaterialIcons name="email" size={20} color="#000" />
                     </View>
                     <View style={{ gap: 5 }}>
                       <Text style={styles.title}>Change Email Address</Text>
                       <Text style={styles.subTitle}>
-                        iantubers957@gmail.com{" "}
+                        iantubers957@gmail.com
                       </Text>
                     </View>
                   </View>
-                  <IconButton icon='chevron-right' />
+                  <IconButton icon="chevron-right" />
                 </TouchableOpacity>
                 <TouchableOpacity
                   style={[
@@ -120,16 +120,16 @@ const ProfileScreen = () => {
                 >
                   <View style={styles.rowSub}>
                     <View style={styles.circle}>
-                      <MaterialIcons name='lock' size={20} color='#000' />
+                      <MaterialIcons name="lock" size={20} color="#000" />
                     </View>
                     <View style={{ gap: 5 }}>
                       <Text style={styles.title}>Change Password</Text>
                       <Text style={styles.subTitle}>
-                        Last change 1 year ago{" "}
+                        Last change 1 year ago
                       </Text>
                     </View>
                   </View>
-                  <IconButton icon='chevron-right' />
+                  <IconButton icon="chevron-right" />
                 </TouchableOpacity>
               </View>
             </ScrollView>
@@ -139,6 +139,8 @@ const ProfileScreen = () => {
     </Animatable.View>
   );
 };
+
+
 export default ProfileScreen;
 const styles = StyleSheet.create({
   container: {
@@ -188,7 +190,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     position: "absolute",
-    left: 150,
+    // left:Platform.OS == "ios" ? 150 : 170,
     top: -25,
   },
   userPhoto: {
@@ -205,7 +207,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: 50,
-    gap: "20%",
+    gap: 20,
     paddingHorizontal: 20,
   },
   menu: {
@@ -223,7 +225,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     paddingHorizontal: 15,
     paddingVertical: 10,
-    gap: "5%",
+    gap: 5,
   },
   menuItemText: {
     color: "#aaa",
@@ -247,7 +249,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    gap: "10%",
+    gap: 10,
   },
   title: {
     fontSize: 15,

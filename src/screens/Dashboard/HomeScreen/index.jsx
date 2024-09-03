@@ -1,5 +1,4 @@
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
-import { Notification } from "iconsax-react-native";
 import { useCallback, useEffect, useState } from "react";
 import {
   View,
@@ -241,7 +240,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 20,
-    gap: "10%",
+    gap: 10,
   },
   tag: {
     flexDirection: "row",
@@ -292,7 +291,7 @@ const styles = StyleSheet.create({
   },
   playButtonContainer: {
     position: "absolute",
-    top: "25%",
+    top: Platform.OS == "ios" ? "25%" : "20%",
     right: 10,
     transform: [{ translateY: -25 }],
     justifyContent: "center",
